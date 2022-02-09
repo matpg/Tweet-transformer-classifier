@@ -16,9 +16,9 @@ query = st.text_input("Classify!", "")
 
 labels = ['agradecimiento', 'consulta', 'fraude', 'otro', 'problema',  'reclamo']
 
-access_token = os.getenv('ACCESS_TOKEN')
+access_token = st.secrets["ACCESS_TOKEN"]
 
-MODEL_NAME = os.getenv('MODEL_NAME')
+MODEL_NAME =  st.secrets['MODEL_NAME']
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_auth_token=access_token)
 
