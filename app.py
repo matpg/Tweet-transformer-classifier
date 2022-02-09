@@ -1,8 +1,4 @@
 import streamlit as st
-from dotenv import load_dotenv
-import os
-load_dotenv()
-
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 # title and description
@@ -18,7 +14,7 @@ labels = ['agradecimiento', 'consulta', 'fraude', 'otro', 'problema',  'reclamo'
 
 access_token = st.secrets["ACCESS_TOKEN"]
 
-MODEL_NAME =  st.secrets['MODEL_NAME']
+MODEL_NAME = st.secrets["MODEL_NAME"]
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_auth_token=access_token)
 
