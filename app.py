@@ -18,7 +18,7 @@ st.write("Write your Tweet here:")
 query = st.text_input("", "")
 
 # Classify button
-btn = st.button("Classify!")
+btn = st.button("Classify! 🤖")
 
 
 @st.experimental_singleton
