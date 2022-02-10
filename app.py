@@ -94,5 +94,5 @@ if query != "" or btn:
     if response == "problema":
         category = CategoriesAnalyze(query)
         categories = ", ".join([cat for cat in category])
-        st.write(f"Category: {categories}")
+        st.write(f"Categories: {categories}")
 
