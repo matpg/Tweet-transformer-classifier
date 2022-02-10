@@ -33,6 +33,18 @@ def transformer_model(access_token, model_name):
     return tokenizer, model
 tokenizer, model = transformer_model(access_token, model_name)
 
+if query != "":
+    inputs = tokenizer(query, return_tensors="pt")
+    outputs = model(**inputs)
+    response = outputs.logits 
+    response = response.detach().numpy()
+    response = response.tolist()
+    response = response[0]
+    response = response.index(max(response))
+    response = labels[response]
+    st.write(f"Label: {response}")
+
+
 '''
 def card(id_val, source, context):
     st.markdown(f"""
@@ -44,15 +56,3 @@ def card(id_val, source, context):
         </div>
     </div>
     """, unsafe_allow_html=True)
-'''
-
-if query != "":
-    inputs = tokenizer(query, return_tensors="pt")
-    outputs = model(**inputs)
-    response = outputs.logits 
-    response = response.detach().numpy()
-    response = response.tolist()
-    response = response[0]
-    response = response.index(max(response))
-    response = labels[response]
-    st.write(f"Label: {response}")
