@@ -88,5 +88,6 @@ if query != "":
     st.write(f"Label: {response}")
     if response == "problema":
         category = CategoriesAnalyze(query)
-        st.write(f"Category: {category}")
+        categories = ", ".join([cat for cat in category])
+        st.write(f"Category: {categories}")
 
