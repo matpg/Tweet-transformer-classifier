@@ -78,7 +78,7 @@ def CategoriesAnalyze(tweet):
         # delete duplicates values from the list keyword_list
         return list(np.unique(keyword_list))
     else:
-        return 'Category Not Found'
+        return ['Category Not Found']
 
 if query != "" or btn:
     st.balloons()
