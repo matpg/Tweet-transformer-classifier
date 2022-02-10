@@ -9,7 +9,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # title and description
-st.title("Tweet Transformer Classifier")
+st.title("#Tweet Transformer Classifier")
 st.markdown("Hugging Face fine tuned AutoNLP model is used to classify tweets")
 st.write("Write your Tweet here:")
 
