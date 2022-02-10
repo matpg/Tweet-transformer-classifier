@@ -28,8 +28,8 @@ access_token, model_name = credentials()
 
 @st.experimental_singleton
 def transformer_model(access_token, model_name):
-    tokenizer = AutoTokenizer.from_pretrained(model_name, user_token=access_token)
-    model = AutoModelForSequenceClassification.from_pretrained(model_name,  user_token=access_token)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=access_token)
+    model = AutoModelForSequenceClassification.from_pretrained(model_name,  use_auth_token=access_token)
     return tokenizer, model
 tokenizer, model = transformer_model(access_token, model_name)
 
