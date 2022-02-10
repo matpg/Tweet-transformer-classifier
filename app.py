@@ -43,17 +43,3 @@ if query != "":
     response = response.index(max(response))
     response = labels[response]
     st.write(f"Label: {response}")
-
-
-'''
-def card(id_val, source, context):
-    st.markdown(f"""
-    <div class="card" style="margin:1rem;">
-        <div class="card-body">
-            <h5 class="card-title">{source}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{id_val}</h6>
-            <p class="card-text">{context}</p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-'''
