@@ -15,7 +15,11 @@ st.write("Write your Tweet here:")
 
 
 # search bar
-query = st.text_input("Classify!", "")
+query = st.text_input("", "")
+
+# Classify button
+btn = st.button("Classify!")
+
 
 @st.experimental_singleton
 def credentials():
@@ -76,7 +80,8 @@ def CategoriesAnalyze(tweet):
     else:
         return 'Category Not Found'
 
-if query != "":
+if query != "" or btn:
+    st.balloons()
     inputs = tokenizer(query, return_tensors="pt")
     outputs = model(**inputs)
     response = outputs.logits 
